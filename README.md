@@ -1,32 +1,58 @@
-# P2P File Sharing with GUI
+📁 P2P File Sharing with GUI
+This project is a simple peer-to-peer (P2P) file sharing system using Python sockets. It includes:
+    A central server for peer discovery.
+    A client peer capable of sharing and downloading files.
+    A GUI frontend (using Tkinter) for easier interaction.
 
-This is a Python-based Peer-to-Peer file sharing application with a central server for discovery, and a GUI for ease of use.
-
-## 🔧 Components
-
-- `server.py`: Handles peer registration and file discovery.
-- `client.py`: Acts as both client and server for file sharing.
-- `gui.py`: Simple Tkinter GUI for interacting with the system.
-
-## 📂 Setup
-
-1. Place files to share in `shared_files/`.
-2. Downloaded files go into `p2pdownloads/`.
-
-## 🚀 How to Run
-
-### On Server
-```bash
-python3 server.py
+📄 File Structure
+```graphql
+p2p-file-sharing/
+├── server.py           # Central peer registry and file host
+├── client.py           # Peer client with file sharing and P2P download
+├── gui.py              # GUI to select peer, view files, and download
+├── shared_files/       # Folder to place files you want to share
+├── p2pdownloads/       # Folder where downloaded files are saved
+└── README.md           # You’re reading it :)
 ```
 
-### On Each Peer
-```bash
-python3 client.py
-python3 gui.py
-```
+✅ Requirements
+    Python 3.6+
+    Works on Linux, Windows, or WSL
+    No third-party packages required
 
-## 🔌 Networking
+🚀 How to Run
 
-- Ensure all machines are on the same network.
-- Set `SERVER_IP` in `client.py` and `gui.py` to server IP.
+  Start the Server On one machine (ideally the host):
+  ```bash
+  python3 server.py
+  ```
+
+  Start the Client (Peer) On each peer, including the server if needed:
+  ```bash
+  python3 client.py
+  ```
+
+  Run GUI (on peer):
+  ```bash
+  python3 gui.py
+  ```
+
+🌐 Network Instructions
+    Make sure all systems are on the same network.
+    Update SERVER_IP in client.py and gui.py to the IP of the system running server.py.
+    Open port 6000 on all peers for P2P downloads.
+    You can test peer connections with:
+  ```bash
+    nc -vz <peer_ip> 6000
+  ```
+📦 File Sharing
+    Place files you want to share in shared_files/
+    Downloaded files will be saved to p2pdownloads/
+    From GUI: Enter a peer’s IP, select a file, and hit Download
+
+🛠 Troubleshooting
+    Make sure shared_files/ and p2pdownloads/ exist before running.
+    If GUI hangs or fails, check:
+    Firewall or network issues
+    Wrong IP or peer not running
+
