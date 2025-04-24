@@ -24,20 +24,20 @@ p2p-file-sharing/
 
 🚀 How to Run
 
-      Start the Server On one machine (ideally the host):
-      ```bash
-      python3 server.py
-      ```
+    Start the Server On one machine (ideally the host):
+```bash
+    python3 server.py
+```
 
-      Start the Client (Peer) On each peer, including the server if needed:
-      ```bash
-      python3 client.py
-      ```
+    Start the Client (Peer) On each peer, including the server if needed:
+```bash
+    python3 client.py
+```
 
-      Run GUI (on peer):
-      ```bash
-      python3 gui.py
-      ```
+    Run GUI (on peer):
+```bash
+    python3 gui.py
+```
 
 🌐 Network Instructions
 
