@@ -1,5 +1,6 @@
 📁 P2P File Sharing with GUI
-This project is a simple peer-to-peer (P2P) file sharing system using Python sockets. It includes:
+
+    This project is a simple peer-to-peer (P2P) file sharing system using Python sockets. It includes:
     -A central server for peer discovery.
     -A client peer capable of sharing and downloading files.
     -A GUI frontend (using Tkinter) for easier interaction.
@@ -18,6 +19,7 @@ p2p-file-sharing/
 
 
 ✅ Requirements
+    
     -Python 3.6+
     -Works on Linux, Windows, or WSL
     -No third-party packages required
@@ -41,6 +43,7 @@ Run GUI (on peer):
 
 
 🌐 Network Instructions
+    
     -Make sure all systems are on the same network.
     -Update SERVER_IP in client.py and gui.py to the IP of the system running server.py.
     -Open port 6000 on all peers for P2P downloads.
@@ -51,12 +54,14 @@ Run GUI (on peer):
 
 
 📦 File Sharing
+    
     -Place files you want to share in shared_files/
     -Downloaded files will be saved to p2pdownloads/
     -From GUI: Enter a peer’s IP, select a file, and hit Download
 
 
 🛠 Troubleshooting
+    
     -Make sure shared_files/ and p2pdownloads/ exist before running.
     -If GUI hangs or fails, check:
     -Firewall or network issues
@@ -64,5 +69,6 @@ Run GUI (on peer):
 
 
 😊 BY
+    
     *Aneesh Bharadwaj K S*
     *Akanksh Rai*
