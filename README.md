@@ -1,9 +1,9 @@
 📁 P2P File Sharing with GUI
-
-    This project is a simple peer-to-peer (P2P) file sharing system using Python sockets. It includes:
+This project is a simple peer-to-peer (P2P) file sharing system using Python sockets. It includes:
     -A central server for peer discovery.
     -A client peer capable of sharing and downloading files.
     -A GUI frontend (using Tkinter) for easier interaction.
+
 
 📄 File Structure
 ```graphql
@@ -16,31 +16,31 @@ p2p-file-sharing/
 └── README.md           # You’re reading it :)
 ```
 
-✅ Requirements
 
+✅ Requirements
     -Python 3.6+
     -Works on Linux, Windows, or WSL
     -No third-party packages required
 
-🚀 How to Run
 
-    Start the Server On one machine (ideally the host):
+🚀 How to Run
+Start the Server On one machine (ideally the host):
 ```bash
     python3 server.py
 ```
 
-    Start the Client (Peer) On each peer, including the server if needed:
+Start the Client (Peer) On each peer, including the server if needed:
 ```bash
     python3 client.py
 ```
 
-    Run GUI (on peer):
+Run GUI (on peer):
 ```bash
     python3 gui.py
 ```
 
-🌐 Network Instructions
 
+🌐 Network Instructions
     -Make sure all systems are on the same network.
     -Update SERVER_IP in client.py and gui.py to the IP of the system running server.py.
     -Open port 6000 on all peers for P2P downloads.
@@ -48,20 +48,21 @@ p2p-file-sharing/
   ```bash
     nc -vz <peer_ip> 6000
   ```
-📦 File Sharing
 
+
+📦 File Sharing
     -Place files you want to share in shared_files/
     -Downloaded files will be saved to p2pdownloads/
     -From GUI: Enter a peer’s IP, select a file, and hit Download
 
-🛠 Troubleshooting
 
+🛠 Troubleshooting
     -Make sure shared_files/ and p2pdownloads/ exist before running.
     -If GUI hangs or fails, check:
     -Firewall or network issues
     -Wrong IP or peer not running
 
-😊 BY
 
+😊 BY
     *Aneesh Bharadwaj K S*
     *Akanksh Rai*
