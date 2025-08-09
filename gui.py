@@ -9,33 +9,37 @@ class P2PGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("P2P File Sharing")
-        self.root.geometry("450x400")
-        
-        self.label = tk.Label(root, text="P2P File Sharing Client", font=("Arial", 14))
-        self.label.pack(pady=10)
-        
-        self.list_button = tk.Button(root, text="List Available Files", command=self.list_files)
-        self.list_button.pack(pady=5)
-        
-        self.filename_entry = tk.Entry(root, width=40)
-        self.filename_entry.pack(pady=5)
+        self.root.geometry("500x450")
+        self.root.configure(bg="#f0f4f8")
+
+        main_frame = tk.Frame(root, bg="#e3eaf2", bd=2, relief=tk.RIDGE)
+        main_frame.pack(padx=18, pady=18, fill=tk.BOTH, expand=True)
+
+        self.label = tk.Label(main_frame, text="P2P File Sharing Client", font=("Arial", 16, "bold"), fg="#2c3e50", bg="#e3eaf2")
+        self.label.pack(pady=(10, 18))
+
+        self.list_button = tk.Button(main_frame, text="List Available Files", command=self.list_files, font=("Arial", 11), bg="#6fa3ef", fg="white", activebackground="#4a90e2", relief=tk.GROOVE)
+        self.list_button.pack(pady=6, ipadx=8, ipady=2)
+
+        self.filename_entry = tk.Entry(main_frame, width=40, font=("Arial", 11), bg="#f7fbff", fg="#34495e", relief=tk.SUNKEN)
+        self.filename_entry.pack(pady=6)
         self.filename_entry.insert(0, "Enter filename to download")
-        
-        self.peer_entry = tk.Entry(root, width=40)
-        self.peer_entry.pack(pady=5)
+
+        self.peer_entry = tk.Entry(main_frame, width=40, font=("Arial", 11), bg="#f7fbff", fg="#34495e", relief=tk.SUNKEN)
+        self.peer_entry.pack(pady=6)
         self.peer_entry.insert(0, "Enter peer IP (or leave blank)")
-        
-        self.download_button = tk.Button(root, text="Download File", command=self.download_file)
-        self.download_button.pack(pady=5)
-        
-        self.quit_button = tk.Button(root, text="Exit", command=root.quit)
-        self.quit_button.pack(pady=10)
-        
-        self.output_text = tk.Text(root, height=12, width=55)
-        self.output_text.pack()
-        
-        self.peer_count_label = tk.Label(root, text="Peers Available: 0", font=("Arial", 10))
-        self.peer_count_label.pack(pady=5)
+
+        self.download_button = tk.Button(main_frame, text="Download File", command=self.download_file, font=("Arial", 11), bg="#5cb85c", fg="white", activebackground="#449d44", relief=tk.GROOVE)
+        self.download_button.pack(pady=6, ipadx=8, ipady=2)
+
+        self.quit_button = tk.Button(main_frame, text="Exit", command=root.quit, font=("Arial", 11), bg="#e74c3c", fg="white", activebackground="#c0392b", relief=tk.GROOVE)
+        self.quit_button.pack(pady=12, ipadx=8, ipady=2)
+
+        self.output_text = tk.Text(main_frame, height=12, width=55, font=("Consolas", 10), bg="#f7fbff", fg="#2c3e50", relief=tk.SUNKEN, bd=2)
+        self.output_text.pack(pady=6)
+
+        self.peer_count_label = tk.Label(main_frame, text="Peers Available: 0", font=("Arial", 11, "italic"), fg="#34495e", bg="#e3eaf2")
+        self.peer_count_label.pack(pady=8)
         
     def list_files(self):
         self.output_text.delete(1.0, tk.END)
